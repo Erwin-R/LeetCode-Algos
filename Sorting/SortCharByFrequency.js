@@ -1,3 +1,4 @@
+//merge sort
 var frequencySort = function(s) {
     
     
@@ -80,3 +81,40 @@ const mergeSort = (leftArr, rightArr, oriArr) => {
 
     return oriArr
 }
+
+
+//insertion sort
+
+var frequencySort = function(s) {
+    let map = {};
+
+    for(let i = 0; i < s.length; i++){
+        map[s[i]] ? map[s[i]]++ : map[s[i]] = 1;
+    } 
+
+    let charArr = Object.entries(map);
+
+
+    for(let i = 0; i < charArr.length; i++){
+        let j = i -1
+        while(j >= 0 && charArr[j][1] < charArr[j+1][1]){
+            let temp = charArr[j + 1]
+            charArr[j + 1] = charArr[j]
+            charArr[j] = temp
+            j--
+        }
+    }
+
+    let newStr = "";
+    console.log(charArr)
+
+    for(let i = 0; i < charArr.length; i++){
+        while(charArr[i][1] > 0){
+            newStr += charArr[i][0];
+            charArr[i][1]--
+        }
+    }
+
+    
+    return newStr
+};

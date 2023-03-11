@@ -69,3 +69,28 @@ const merge = (leftArr, rightArr, oriArr) => {
     return oriArr
 
 }
+
+//Quicksort
+var sortArray = function(nums) {
+    quicksort(nums)
+    return nums
+};
+
+const quicksort = (arr, left = 0, right = arr.length - 1) =>{
+    if(left >= right) return arr;
+    let start = left, end = right
+    let pivot = arr[Math.floor((left + right)/2)]
+    while(left <= right){
+        while(arr[left] < pivot) left++;
+        while(arr[right] > pivot) right--;
+        if(left <= right){
+            let temp = arr[right];
+            arr[right] = arr[left]
+            arr[left] = temp
+            left++
+            right--
+        }
+    }
+
+    quicksort(arr, start, right), quicksort(arr, left, end)
+}

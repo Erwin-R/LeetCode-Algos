@@ -96,6 +96,35 @@ const quicksort = (arr, left = 0, right = arr.length - 1) =>{
 }
 
 
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortArray = function(nums) {
+    quicksort1(nums)
+    return nums
+};
 
+
+const quicksort1 = (arr, left = 0, right = arr.length - 1) => {
+    if(right - left + 1 <= 1) return arr
+
+    let start = left
+    let pivot = arr[right]
+
+    for(let i = left; i < right; i++){
+        if(arr[i] < pivot){
+            let temp = arr[left]
+            arr[left] = arr[i]
+            arr[i] = temp
+            left++;
+        }
+    }
+
+    arr[right] = arr[left] 
+    arr[left] = pivot
+
+    quicksort1(arr, start, left - 1), quicksort1(arr, left + 1, right)
+}
 
 

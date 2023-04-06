@@ -26,7 +26,7 @@ var findKthLargest = function(nums, k) {
         nums[pointer] = pivot
 
         if(pointer > kthLargest) return quickSelect(left, pointer - 1)
-        else if(pointer < kthLargest) return quickSelect(pointer, right)
+        else if(pointer < kthLargest) return quickSelect(pointer + 1, right)
         else return nums[pointer]
     }
 

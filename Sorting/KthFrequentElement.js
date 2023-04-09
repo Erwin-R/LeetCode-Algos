@@ -3,6 +3,9 @@
  * @param {number} k
  * @return {number[]}
  */
+
+
+let nums = [1,1,1,2,2,2,3], k = 2
 var topKFrequent = function(nums, k) {
     let map = {}
     let freq = new Array(nums.length + 1).fill([])
@@ -15,6 +18,7 @@ var topKFrequent = function(nums, k) {
     
     for(let num in map){
         freq[map[num]] = [...freq[map[num]], num]
+        console.log("------------------")
         console.log(freq)
     }
 
@@ -23,9 +27,12 @@ var topKFrequent = function(nums, k) {
     for(let i = freq.length - 1; i > 0; i--){
         for(let num of freq[i]){
             res.push(num);
+            console.log(res)
             if(res.length == k) return res
         }
     }
 };
 
 //with bucket sort it has O(n) time and O(n) space
+
+console.log(topKFrequent(nums, k))

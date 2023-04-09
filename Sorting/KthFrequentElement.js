@@ -11,8 +11,11 @@ var topKFrequent = function(nums, k) {
         map[nums[i]] ? map[nums[i]]++ : map[nums[i]] = 1
     }
 
+    console.log(map)
+    
     for(let num in map){
         freq[map[num]] = [...freq[map[num]], num]
+        console.log(freq)
     }
 
     let res = []

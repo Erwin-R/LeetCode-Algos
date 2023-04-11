@@ -4,36 +4,38 @@
  * @return {boolean}
  */
 var searchMatrix = function(matrix, target) {
-    let left = 0, right = matrix.length - 1
-
-    while(left <= right){
-        let middle = Math.floor((left + right) / 2)
-        let row = matrix[middle]
-
-        if(target >= row[0] && target <= row[row.length - 1]){
-            let innerL = 0, innerR = row.length - 1
-            while(innerL <= innerR){
-                let innerM = Math.floor((innerL + innerR) / 2)
-
-                if(target == row[innerM]){
-                    return true
-                } else if(target < row[innerM]){
-                    innerR = middle - 1
-                } else{
-                    innerL = middle + 1
-                }
-            }
-
-            return false
-        } else if(target > row[row.length - 1]){
-            left = middle + 1
-        } else{
-            right = middle - 1
+    let [rows, cols] = [matrix.length, matrix[0].length];
+    let [top, bot] = [0, rows-1];
+    
+    while(top <= bot){
+        let row = Math.floor((top +  bot) / 2);
+        if(target > matrix[row][cols-1]) {
+            top = row + 1;
+        } else if(target < matrix[row][0]) {
+            bot = row - 1; 
+        } else {
+            break;
         }
-        
     }
+    
+    if(!(top <= bot)) {
+        return false;
+    }
+    
+    let row = Math.floor((top + bot) / 2);
+    let [l, r] = [0, cols-1];
+    while(l<=r){
+        let m = Math.floor((l + r) /2);
+        if(target > matrix[row][m]) {
+            l = m +1;
+        } else if(target < matrix[row][m]) {
+            r = m - 1;
+        } else if(target == matrix[row][m]) {
+            return true;
+        }
+    }
+    return false;
 
-    return false
 };
 
-//need to find out the details
+//Time log(n + m) 

@@ -45,13 +45,30 @@ var searchMatrix = function(matrix, target) {
 //Time log(n * m) 
 
 var searchMatrix = function(matrix, target) {
-    let [rows, cols] = [matrix.length, matrix[0].length];
-    let [top, bot] = [0, rows * cols -1];
-    
-    while(left <= right){
-        let middle = (left + right)
+    const [rows, cols] = [matrix.length, matrix[0].length];
+    let [left, right] = [0, rows * cols - 1];
+
+    //rows = 3
+    //cols = 4
+
+    //left = 0
+    //right = 11
+
+    while (left <= right) {
+        const mid = Math.floor((left + right) / 2);
+        const [row, col] = [Math.floor(mid / cols), mid % cols];
+        const guess = matrix[row][col];
+
+        if (guess === target) return true;
+        else if (target > guess) left = mid + 1;
+        else if (target < guess) right = mid - 1;
+
     }
+
+    return false
 };
 
 
-console.log(Math.floor(1/4))
+
+console.log(Math.floor(2/4))
+console.log(1%4)

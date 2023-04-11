@@ -2,7 +2,10 @@
  * @param {number[][]} matrix
  * @param {number} target
  * @return {boolean}
- */
+*/
+
+//Time log(n + m) 
+
 var searchMatrix = function(matrix, target) {
     let [rows, cols] = [matrix.length, matrix[0].length];
     let [top, bot] = [0, rows-1];
@@ -38,4 +41,17 @@ var searchMatrix = function(matrix, target) {
 
 };
 
-//Time log(n + m) 
+
+//Time log(n * m) 
+
+var searchMatrix = function(matrix, target) {
+    let [rows, cols] = [matrix.length, matrix[0].length];
+    let [top, bot] = [0, rows * cols -1];
+    
+    while(left <= right){
+        let middle = (left + right)
+    }
+};
+
+
+console.log(Math.floor(1/4))

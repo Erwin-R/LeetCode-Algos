@@ -44,15 +44,13 @@ var searchMatrix = function(matrix, target) {
 
 //Time log(n * m) 
 
+//ex: [[1]]
+//target = 1
+
 var searchMatrix = function(matrix, target) {
     const [rows, cols] = [matrix.length, matrix[0].length];
     let [left, right] = [0, rows * cols - 1];
 
-    //rows = 3
-    //cols = 4
-
-    //left = 0
-    //right = 11
 
     while (left <= right) {
         const mid = Math.floor((left + right) / 2);
@@ -69,6 +67,19 @@ var searchMatrix = function(matrix, target) {
 };
 
 
+    //rows = 1
+    //cols = 1
 
+    //left = 0
+    //right = 0
+
+
+    //target = 1
+
+    //first iteration
+    // mid = 0
+    // row = 0
+    // col = 0
+    // guess = matrix[0][0] = 1
 console.log(Math.floor(2/4))
-console.log(1%4)
+console.log(0%1)

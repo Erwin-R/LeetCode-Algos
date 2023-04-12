@@ -1,7 +1,5 @@
-piles =
-[1000000000,1000000000]
-h =
-3
+let piles = [1000000000,1000000000]
+let h = 3
 /**
  * @param {number[]} piles
  * @param {number} h
@@ -29,9 +27,11 @@ var minEatingSpeed = function(piles, h) {
 
 };
 
+console.log(minEatingSpeed(piles, h))
+
 //O(n * log(m))
 
-var minEatingSpeed = function(piles, h) {
+var minEatingSpeed2 = function(piles, h) {
     let [left, right] = [1, Math.max(...piles)]
     let res = right
 

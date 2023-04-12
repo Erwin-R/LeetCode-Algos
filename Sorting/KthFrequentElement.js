@@ -8,7 +8,7 @@
 let nums = [1,1,1,2,2,2,3], k = 2
 var topKFrequent = function(nums, k) {
     let map = {}
-    let freq = new Array(nums.length + 1).fill([])
+    let freq = new Array(nums.length + 1).fill([]) //have to have nums.length + 1 because if all numbers in array are the same then you need the nums.length + 1 index to put them in
 
     for(let i = 0; i < nums.length;i++){
         map[nums[i]] ? map[nums[i]]++ : map[nums[i]] = 1

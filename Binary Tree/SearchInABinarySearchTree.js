@@ -24,3 +24,25 @@ var searchBST = function(root, val) {
 
 
 };
+
+//first stack
+//if(!root) return null
+// if(root.val == val){
+//     return root
+// } else if(val < root.val){ //hit this if
+//     return searchBST(root.left, val) //returns root after hitting the if in the second call need the return statement on this line otherwise it wont return anything and will be undefined
+// } else{
+//     return searchBST(root.right, val)
+// }
+
+
+
+//second stack
+////if(!root) return null
+// if(root.val == val){ //hit this if
+//     return root
+// } else if(val < root.val){ 
+//     return searchBST(root.left, val) 
+// } else{
+//     return searchBST(root.right, val)
+// }

@@ -29,3 +29,5 @@ var insertIntoBST = function(root, val) {
 
 
 };
+
+//with balanced trees the time complexity wil be O(log(n)) but with skewed trees (more values on one side) the time complexity will be O(n)

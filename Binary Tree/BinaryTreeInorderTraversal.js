@@ -1,3 +1,5 @@
+// Time Complexity O(n) Space Complexity O(n)
+
 var inorderTraversal = function(root, nodes = []) {
     if(!root){ //once we reach the bottom we want to return the nodes list
         return nodes

@@ -17,3 +17,24 @@ var inorderTraversal = function(root, nodes = []) {
 
     return nodes
 };
+
+
+
+// Time Complexity O(n) Space Complexity O(n)
+var inorderTraversal = function(root) {
+    let res = []
+    let stack = []
+    let curr = root
+
+    while(curr || stack.length != 0){
+        while(curr != null){
+            stack.push(curr)
+            curr = curr.left
+        }
+        curr = stack.pop()
+        res.push(curr.val)
+        curr = curr.right
+    }
+
+    return res
+};

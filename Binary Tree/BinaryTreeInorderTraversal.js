@@ -1,5 +1,5 @@
 var inorderTraversal = function(root, nodes = []) {
-    if(!root){
+    if(!root){ //once we reach the bottom we want to return the nodes list
         return nodes
     }
 
@@ -9,9 +9,9 @@ var inorderTraversal = function(root, nodes = []) {
     //      nodes.push(inorderTraversal(root.right))
     // }
 
-    inorderTraversal(root.left, nodes);
-    nodes.push(root.val)
-    inorderTraversal(root.right, nodes);
+    inorderTraversal(root.left, nodes);// we go down the left side of tree to get the minimum values of the tree
+    nodes.push(root.val) // once we come back up from the leaf node we want to push the left-most value
+    inorderTraversal(root.right, nodes); //once we push the left values we push the greater values
 
     return nodes
 };

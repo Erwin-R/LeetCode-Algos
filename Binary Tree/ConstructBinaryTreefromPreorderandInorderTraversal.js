@@ -17,9 +17,10 @@ var buildTree = function(preorder, inorder) {
     let root = new TreeNode(preorder[0])
     let mid = inorder.indexOf(preorder[0])
     root.left = buildTree(preorder.slice(1,mid + 1), inorder.slice(0,mid)) //we slice from index 1 to mid + 1 since root is preorder[0] and the root for the next recursive call will be the first index  
-                                                                            //we slice from 0 to mid
+                                                                            //we slice from 0 to mid since in inorder traversal the values to the left of the mid index(the root) are the values left of root
+
     root.right = buildTree(preorder.slice(mid + 1), inorder.slice(mid + 1))
-    
+                                                                            // we slice mid + 1 in inorder traversal since the values right of the mid(the root) are the values to the right of the root
 
     return root
 };

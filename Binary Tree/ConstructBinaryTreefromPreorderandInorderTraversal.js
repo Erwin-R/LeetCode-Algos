@@ -11,6 +11,8 @@
  * @param {number[]} inorder
  * @return {TreeNode}
  */
+// Time O(n) Space O(n)
+
 var buildTree = function(preorder, inorder) {
     if(!preorder.length || !inorder.length) return null
 

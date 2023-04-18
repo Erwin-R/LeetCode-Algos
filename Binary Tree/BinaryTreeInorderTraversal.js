@@ -31,10 +31,27 @@ var inorderTraversal = function(root) {
             stack.push(curr)
             curr = curr.left
         }
+        //stack
         curr = stack.pop()
+        //curr
         res.push(curr.val)
+        //res
         curr = curr.right
     }
 
     return res
 };
+
+
+// Loop starts here
+// [ [1,null,2,3] ] *stack
+// [1,null,2,3] *curr
+// [ 1 ] *res
+// Loop starts here
+// [ [2,3], [3] ] *stack
+// [3] *curr
+// [ 1, 3 ] *res
+// Loop starts here
+// [ [2,3] ] *stack
+// [2,3] *curr
+// [ 1, 3, 2 ] *res

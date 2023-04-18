@@ -26,7 +26,7 @@ var buildTree = function(preorder, inorder) {
 };
 
 
-
+//FIRST EXAMPLE
 //first iteration
 // preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
 // root = 3
@@ -68,3 +68,17 @@ var buildTree = function(preorder, inorder) {
 // root.left = buildTree(preorder.slice(1, 1), inorder.slice(0, 0)) **returns null
 // root.right = buildTree(preorder.slice(1), inorder.slice(1)) ** returns null 
 // we return root which is 7 to the third iteration
+
+
+//Second EXAMPLE
+//first iteration
+// preorder = [3,9,8,20,15,7], inorder = [8,9,3,15,20,7]
+// root = 3
+// mid = 2
+// root.left = buildTree(preorder.slice(1, 3), inorder.slice(0, mid)) 
+// root.right = buildTree(preorder.slice(3), inorder.slice(3))
+
+/**mid keeps track of index of where root is located in inorder array from preorder array. this also allows us to keep track of
+ * whats in the left and right of the root since it tells how many values are to each side of root. 
+    
+*/

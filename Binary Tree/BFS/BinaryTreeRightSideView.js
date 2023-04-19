@@ -18,7 +18,7 @@ var rightSideView = function(root) {
 
 
     while(queue.length > 0){
-        let rightSide = null, queueLength = queue.length
+        let rightSide = null, queueLength = queue.length //rightSide to keep track of node to the right. queueLength to keep track of queueLength while we shift
         for(let i = 0; i < queueLength; i++){
             let curr = queue.shift()
             

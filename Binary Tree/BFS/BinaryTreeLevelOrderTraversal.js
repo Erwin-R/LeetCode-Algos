@@ -34,3 +34,48 @@ var levelOrder = function(root) {
 
     return levels
 };
+
+
+//before while loop
+// queue = [[3,9,20,null,null,15,7]]
+// levels = []
+
+//first while iteration
+    // const currLevel = [], queueLength = 1     
+    // first for iteration (iterates only once)
+        // curr = [3,9,20,null,null,15,7]
+        // currLevel = [3]
+        // queue = [[9], [20, 15, 7]]
+        // levels = [[3]]
+
+
+// queue = [[9], [20, 15, 7]]
+//second while iteration
+    // const currLevel = [], queueLength = 2  
+    // first for iteration (iterates twice)
+        //  curr = [9]
+        //  currLevel = [9]
+        //  skip if statements
+
+    // queue = [[20, 15, 7]]
+    // second for iteration 
+        //  curr = [20,15,7]
+        //  currLevel = [9,20]
+        //  queue = [[15], [7]]
+        //  levels = [[3],[9,20]]
+
+
+//  queue = [[15], [7]]
+// third while iteration
+    // const currLevel = [], queueLength = 2  
+    // first for iteration (iterates twice)
+        // curr = [15]
+        // currLevel = [15]
+        // skip if statements
+
+    //  queue = [[7]]    
+    // second for iteration
+    // curr = [7]
+    // currLevel = [15,7]
+    // skip if statements
+    // levels = [[3],[9,20],[15,7]]

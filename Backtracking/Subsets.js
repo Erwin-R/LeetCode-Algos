@@ -13,10 +13,12 @@ var subsets = function(nums) {
             return
         }
 
+        //decision to include nums[i]
         subset.push(nums[i])
         dfs(i + 1)
-
         subset.pop()
+
+        //decision to not include nums[i]
         dfs(i + 1)
     }
 
@@ -24,3 +26,5 @@ var subsets = function(nums) {
 
     return res 
 };
+
+//Time: O(n * 2^n), Space: O(n)

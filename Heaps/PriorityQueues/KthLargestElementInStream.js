@@ -2,6 +2,9 @@
  * @param {number} k
  * @param {number[]} nums
  */
+
+//Time Complexity: O(n * log(n)) Space: O(n)
+
 var KthLargest = function(k, nums) {
     this.k = k
 
@@ -18,6 +21,9 @@ var KthLargest = function(k, nums) {
  * @param {number} val
  * @return {number}
  */
+
+//Add function Time Complexity: O(m * log(n)) Space: O(n)
+
 KthLargest.prototype.add = function(val) {
     this.minHeap.enqueue(val);
     if(this.minHeap.size() > this.k) this.minHeap.dequeue() //maintain top k 

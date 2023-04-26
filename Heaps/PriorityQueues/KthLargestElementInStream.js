@@ -22,7 +22,7 @@ var KthLargest = function(k, nums) {
  * @return {number}
  */
 
-//Add function Time Complexity: O(m * log(n)) Space: O(n)
+//Add function Time Complexity: O(m * log(n)) Space: O(n) **m being the amount of time we call the add function
 
 KthLargest.prototype.add = function(val) {
     this.minHeap.enqueue(val);

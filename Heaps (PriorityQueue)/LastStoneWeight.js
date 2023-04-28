@@ -19,3 +19,5 @@ var lastStoneWeight = function(stones) {
 };
 
 //stones = [8,7,4,2,1,1]
+
+//Time: O(n * log(n)) Space: O(n)

@@ -31,7 +31,8 @@ var twoSum = function(nums, target) {
             return [i, map[difference] - 1]
         }
         
-        map[nums[i]] = i + 1
+        map[nums[i]] = i + 1 // have to add the i + 1 because if we check the if statement when we insert 
+                            // first value, it will be 0 and return false
         
         
 
@@ -41,4 +42,4 @@ var twoSum = function(nums, target) {
 
 };
 
-//this algo is O(n) time
+// Time: O(n)  Space: O(n)

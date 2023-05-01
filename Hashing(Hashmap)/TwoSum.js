@@ -43,3 +43,10 @@ var twoSum = function(nums, target) {
 };
 
 // Time: O(n)  Space: O(n)
+
+let x = y = 1
+console.log(x, y)
+
+
+let map = {1:1, 2: 2}
+console.log(Object.keys(map).length)

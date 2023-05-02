@@ -29,7 +29,7 @@ var LRUCache = function (capacity) {
 //remove node from list
 LRUCache.prototype.remove = function (node) {
     [previous, nxt] = [node.prev, node.next]
-    // [previous.next, nxt.prev] = [nxt, previous]
+
     previous.next = nxt
     nxt.prev = previous
 }
@@ -39,8 +39,7 @@ LRUCache.prototype.insert = function (node) {
     [previous, nxt] = [this.right.prev, this.right]
     previous.next = node
     nxt.prev = node
-    // previous.next = nxt.prev = node
-    // [node.next, node.prev] = [nxt, previous]
+
     node.next = nxt
     node.prev = previous
 }
@@ -76,10 +75,7 @@ LRUCache.prototype.put = function (key, value) {
     if (Object.keys(this.map).length > this.cap) {
         // remove from the list and delete the LRU from the hashmap
         lru = this.left.next
-        // console.log(lru + "yellow")
         this.remove(lru)
-        // console.log(this.map[lru.key])
-        // console.log('--------')
         delete this.map[lru.key]
     }
 };

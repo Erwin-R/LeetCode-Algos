@@ -1,5 +1,7 @@
-class Node{
-    constructor(key, val){
+//Time: O(1) Space: O(n)
+
+class Node {
+    constructor(key, val) {
         this.key = key
         this.val = val
         this.next = null
@@ -10,7 +12,7 @@ class Node{
 /**
  * @param {number} capacity
  */
-var LRUCache = function(capacity) {
+var LRUCache = function (capacity) {
     this.cache = {}
     this.cap = capacity
     this.length = 0
@@ -28,8 +30,8 @@ var LRUCache = function(capacity) {
  * @param {number} key
  * @return {number}
  */
-LRUCache.prototype.get = function(key) {
-    if(this.cache[key]){
+LRUCache.prototype.get = function (key) {
+    if (this.cache[key]) {
         this.remove(this.cache[key])
         this.insert(this.cache[key])
         return this.cache[key].val
@@ -43,17 +45,17 @@ LRUCache.prototype.get = function(key) {
  * @param {number} value
  * @return {void}
  */
-LRUCache.prototype.put = function(key, value) {
-    if(this.cache[key]){
-       this.remove(this.cache[key])
-       this.length -= 1 
+LRUCache.prototype.put = function (key, value) {
+    if (this.cache[key]) {
+        this.remove(this.cache[key])
+        this.length -= 1
     }
 
     this.cache[key] = new Node(key, value)
     this.insert(this.cache[key])
     this.length += 1
 
-    if(this.length > this.cap){
+    if (this.length > this.cap) {
         let lru = this.left.next
         this.remove(lru)
         delete this.cache[lru.key]
@@ -62,7 +64,7 @@ LRUCache.prototype.put = function(key, value) {
 
 };
 
-LRUCache.prototype.remove = function(node){
+LRUCache.prototype.remove = function (node) {
     // [previous, nxt] = [node.prev, node.next]
     let previous = node.prev
     let nxt = node.next
@@ -72,7 +74,7 @@ LRUCache.prototype.remove = function(node){
 
 }
 
-LRUCache.prototype.insert = function(node){
+LRUCache.prototype.insert = function (node) {
     // [previous, nxt] = [this.right.prev, this.right]
 
     let previous = this.right.prev

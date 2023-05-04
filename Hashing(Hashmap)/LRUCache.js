@@ -56,7 +56,7 @@ LRUCache.prototype.put = function (key, value) {
     this.length += 1
 
     if (this.length > this.cap) {
-        //remove from the lsit and delete the LRU from hashmap
+        //remove from the list and delete the LRU from hashmap
         let lru = this.left.next
         this.remove(lru)
         delete this.cache[lru.key]

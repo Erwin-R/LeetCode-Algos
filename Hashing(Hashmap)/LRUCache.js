@@ -13,7 +13,7 @@ class Node {
  * @param {number} capacity
  */
 var LRUCache = function (capacity) {
-    this.cache = {}
+    this.cache = {} // map key to node 
     this.cap = capacity
     this.length = 0
 
@@ -56,6 +56,7 @@ LRUCache.prototype.put = function (key, value) {
     this.length += 1
 
     if (this.length > this.cap) {
+        //remove from the lsit and delete the LRU from hashmap
         let lru = this.left.next
         this.remove(lru)
         delete this.cache[lru.key]
@@ -64,6 +65,7 @@ LRUCache.prototype.put = function (key, value) {
 
 };
 
+//remove node from list
 LRUCache.prototype.remove = function (node) {
     // [previous, nxt] = [node.prev, node.next]
     let previous = node.prev
@@ -74,6 +76,7 @@ LRUCache.prototype.remove = function (node) {
 
 }
 
+//insert node at right
 LRUCache.prototype.insert = function (node) {
     // [previous, nxt] = [this.right.prev, this.right]
 

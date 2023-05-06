@@ -28,8 +28,8 @@ MyHashMap.prototype.hash = function(key){
  */
 MyHashMap.prototype.put = function(key, value) {
     let curr = this.map[this.hash(key)]
-    while(curr.next){
-        if(curr.next.key == key){
+    while(curr.next){ //have to do curr.next incase there is only two values at index one
+        if(curr.next.key == key){ // one of which is dummy node. while loop wont reach node with key if did curr.key instead of curr.next.key
             curr.next.value = value
             return
         }

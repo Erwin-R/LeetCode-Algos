@@ -1,5 +1,5 @@
 /*
-"Chaining Method" 
+"Chaining Method" (open hashing: collisions stored outside of hash table)
 Time: O(N/K) where n is the number of possible keys and k is the predefined nodes inserted
 Space: O(K + M) where K is the number of predefined nodes in hashmap and M is the number
 of unique keys inserted into hashmap
@@ -69,3 +69,70 @@ MyHashMap.prototype.remove = function(key) {
         curr = curr.next
     }
 };
+
+
+/*
+"Open Addressing" (closed hashing: collions result in storing record in another slot of table)
+Time: O(1) where n is the number of possible keys and k is the predefined nodes inserted
+Space: O(n) where K is the number of predefined nodes in hashmap and M is the number
+of unique keys inserted into hashmap
+*/ 
+
+
+class Pair {
+    constructor(key, val){
+        this.key = key
+        this.val = val
+    }
+}
+
+class HashMap{
+    constructor(size, capacity, map){
+        this.size = 0
+        this.capacity = 2
+        this.map = [null, null]
+    }
+
+
+    hash(key){
+        let idx = 0
+        for(let i = 0; i < key.length; i++){
+            idx += key.charCodeAt(i);
+        }
+    
+        return idx % this.capacity
+    }
+
+
+    get(key){
+        let idx = this.hash(key)
+        while(this.map[idx]){ //while there is a value at the given index
+            if(this.map[idx].key == key){
+                return this.map[idx].val
+            }
+
+            idx += 1
+            idx = idx % this.capacity // do this incase increasing idx by one brings us out of bounds
+        }
+
+        return null
+    }
+
+    put(key, value){
+        let idx = this.hash(key)
+
+        while(true){
+            if(!this.map[idx]){// if key doesnt exist 
+                this.map[idx] = new Pair(key, value)
+                this.size +=1
+                if(this.size >= this.capacity / 2){ //want to rehash if we used half the capacity of map
+                    this.rehash()
+                }
+                return;
+            } else if(this.map[idx].key == key){ // if key already exists update value
+                this.map[idx].val = value
+                return 
+            }
+        }
+    }
+}

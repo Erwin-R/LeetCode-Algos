@@ -73,9 +73,8 @@ MyHashMap.prototype.remove = function(key) {
 
 /*
 "Open Addressing" (closed hashing: collions result in storing record in another slot of table)
-Time: O(1) where n is the number of possible keys and k is the predefined nodes inserted
-Space: O(n) where K is the number of predefined nodes in hashmap and M is the number
-of unique keys inserted into hashmap
+Time: O(1)
+Space: O(n) 
 */ 
 
 
@@ -132,6 +131,56 @@ class HashMap{
             } else if(this.map[idx].key == key){ // if key already exists update value
                 this.map[idx].val = value
                 return 
+            }
+
+
+            //if key does exist and does not match with existing key at that index
+            // we look for next available open index with no value 
+            idx += 1
+            idx = idx % this.capacity
+        }
+    }
+
+    rehash(){
+        this.capacity = 2 * this.capacity
+        let newMap = new Array(this.capacity).fill(null)
+        let oldMap = this.map
+        this.map = newMap // reassigned current map to the new map with null values
+        this.size = 0 //reset size to 0
+
+        for(let i = 0; i < oldMap.length; i++){
+            if(oldMap[i]){
+                // dont increase size in if statement since size is increased internally in put function
+                this.put(oldMap[i].key, oldMap[i].val) 
+            }
+        }
+    }
+
+    remove(key){
+        if(this.get(key) == null){
+            return;
+        }
+
+        let idx = this.hash(key);
+        while(true){
+            if(this.map[idx].key == key){
+            // Removing an element using open-addressing actually causes a bug,
+            // because we may create a hole in the list, and our get() may 
+            // stop searching early when it reaches this hole.
+                this.map[idx] = null
+                this.size -= 1
+                return
+            }
+            idx += 1
+            idx = idx % this.capacity
+        }
+
+    }
+
+    print() {
+        for (let i = 0; i < this.map.length; i++) {
+            if (this.map[i]) {
+                console.log(this.map[i].key + " " + this.map[i].val)
             }
         }
     }

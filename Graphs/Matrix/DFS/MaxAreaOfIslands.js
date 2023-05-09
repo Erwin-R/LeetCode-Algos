@@ -1,3 +1,6 @@
+//Time: O(N * M) where n is number of rows and m is number of colums
+//Space: Worst case O(N * M) in case the grid map is filled with lands where dfs goes by M * N deep
+
 /**
  * @param {number[][]} grid
  * @return {number}

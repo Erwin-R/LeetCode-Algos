@@ -1,3 +1,6 @@
+//Time: O(n * m) / O(n^2)
+//Space: O(n * m)
+
 //Solution 1
 /**
  * @param {number[][]} grid
@@ -60,6 +63,8 @@ var shortestPathBinaryMatrix = function(grid) {
         for(const [dr, dc] of directions){
             let [x,y] = [row + dr, col + dc]
             let key = `${x},${y}`
+
+            //add this line here since if we just add to visit without this if, it will always hit if on line 53
             if(!visited.has(key)){
                 queue.push([x, y, length + 1])
                 visited.add(key)

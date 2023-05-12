@@ -1,3 +1,6 @@
+// Time: O(n^2) or O(n * m)
+// Space: O(n * m)
+
 /**
  * @param {number[][]} grid
  * @return {number}

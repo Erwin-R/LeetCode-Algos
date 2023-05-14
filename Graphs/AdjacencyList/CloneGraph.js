@@ -1,3 +1,6 @@
+//Time: O(n) OR O(E + V)
+//Space: O(n)
+
 /**
  * // Definition for a Node.
  * function Node(val, neighbors) {

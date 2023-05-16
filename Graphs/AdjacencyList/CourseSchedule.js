@@ -1,3 +1,6 @@
+//Time: O(n) / O(N + P) number of nodes(courses) + preReqs 
+//Space: O(n)
+
 /**
  * @param {number} numCourses
  * @param {number[][]} prerequisites

@@ -1,7 +1,11 @@
 //Bottoms-Up approach 
 //Time: O(n), Space: O(1)
 
+//Problem is fibonacci sequence
+
 var climbStairs = function(n) {
+    //start from n and n-1
+    //as part of the subproblem there is only one way to get to n from n and n - 1
     let [one, two] = [1, 1] 
 
 

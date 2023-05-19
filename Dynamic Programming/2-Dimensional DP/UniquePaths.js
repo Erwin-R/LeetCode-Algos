@@ -1,3 +1,6 @@
+//Time: O(n * m)
+//Space: O(n)
+
 /**
  * @param {number} m
  * @param {number} n

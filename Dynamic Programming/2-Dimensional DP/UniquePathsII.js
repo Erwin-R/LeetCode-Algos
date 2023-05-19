@@ -1,3 +1,6 @@
+//Time: O(N * M)
+//Space: O(N * M)
+
 /**
  * @param {number[][]} obstacleGrid
  * @return {number}

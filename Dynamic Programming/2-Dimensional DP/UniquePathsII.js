@@ -32,7 +32,8 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
 
 
 //Dynamic Programming solution
-
+//Time: O(n * m)
+//Space: O(1)
 
 /**
  * @param {number[][]} obstacleGrid

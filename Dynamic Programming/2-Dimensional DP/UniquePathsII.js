@@ -29,3 +29,35 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
 
     return dfs(0, 0)
 };
+
+
+//Dynamic Programming solution
+
+
+/**
+ * @param {number[][]} obstacleGrid
+ * @return {number}
+ */
+var uniquePathsWithObstacles = function(obstacleGrid) {
+    let m = obstacleGrid.length, n = obstacleGrid[0].length
+
+    let dp = new Array(n).fill(0)
+    dp[n - 1] = 1
+
+    // console.log(dp)
+
+    for(let r = m - 1; r > -1; r--){
+        // console.log(dp)
+        console.log("new row next")
+        for(let c = n - 1; c > -1; c--){
+            if(obstacleGrid[r][c]){
+                dp[c] = 0
+            } else if(c + 1 < n){
+                dp[c] = dp[c] + dp[c + 1]
+            }
+            console.log(dp)
+        }
+    }
+
+    return dp[0]
+};

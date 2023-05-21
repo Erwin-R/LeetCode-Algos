@@ -1,3 +1,6 @@
+//Time: O(n * m)
+//Space: O(n * m)
+
 /**
  * @param {string} text1
  * @param {string} text2

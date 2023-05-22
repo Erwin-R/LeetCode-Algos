@@ -1,3 +1,6 @@
+//Time: O(n)
+//Space: O(1)
+
 /**
  * @param {number} n
  * @return {number[]}

@@ -1,5 +1,5 @@
-
-
+//Time: O(n)
+//Space: O(1)
 /**
  * @param {number} n - a positive integer
  * @return {number}

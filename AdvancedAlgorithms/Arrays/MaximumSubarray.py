@@ -14,3 +14,9 @@ class Solution:
                 maxSum = max(subSum, maxSum)
 
         return maxSum
+    
+
+
+# Kadane's Algorithm (Optimized Solution)
+# Time: O(n)
+# Space: O(1)

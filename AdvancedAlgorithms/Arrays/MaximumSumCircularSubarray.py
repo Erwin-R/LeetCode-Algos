@@ -14,3 +14,35 @@ class Solution:
 
 
         return max(globMax, total - globMin) if globMax > 0 else globMax
+    
+    # [5, -3, 5]
+
+#Before loop:
+#curMax = 0
+#curMin = 0
+#total = 0
+#globMax = 5
+#globMin = 5
+
+
+# First iteration
+#curMax = 5
+#curMin = 5
+#total = 5
+#globMax = 5
+#globMin = 5
+
+# Second iteration
+#curMax = 2
+#curMin = -3
+#total = 2
+#globMax = 5
+#globMin = -3
+
+
+# Third iteration
+#curMax = 7
+#curMin = 2
+#total = 7
+#globMax = 7
+#globMin = -3

@@ -1,3 +1,8 @@
+#Kadane's algorithms
+#Time: O(n)
+#Space: O(1)
+
+
 class Solution:
     def maxSubarraySumCircular(self, nums: List[int]) -> int:
         globMin, globMax = nums[0], nums[0]

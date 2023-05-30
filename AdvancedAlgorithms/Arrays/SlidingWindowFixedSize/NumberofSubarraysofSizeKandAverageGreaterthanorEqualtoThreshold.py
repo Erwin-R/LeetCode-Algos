@@ -19,3 +19,8 @@ class Solution:
 
 
         return count
+    
+
+#Solution with One pointer 
+#Time: O(n)
+#Space: O(1)    

@@ -33,14 +33,11 @@ class Solution:
 
         for L in range(len(arr) - k + 1):
             curSum += arr[L + k - 1 ]
-            print("Adding index")
-            print(curSum)
+
             if (curSum / k) >= threshold:
                 res += 1
 
             curSum -= arr[L]
-            print("Subtracting index")
-            print(curSum)
 
         return res
 

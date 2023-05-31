@@ -1,3 +1,6 @@
+#Time: O(n)
+#Space: O(1)
+
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
         length = len(nums) + 1

@@ -15,3 +15,27 @@ class Solution:
 
         
         return length
+    
+
+    
+        #"abcabcbb"
+        # L
+        #  R
+
+        #First iteration
+        # L = 0
+        # R = 0
+        # hits if (L = R : 0 = 0)
+        # length = max(0, 0 - 0) = 0
+
+        #Second iteration
+        # L = 0
+        # R = 1
+        # doesnt hit if 
+        # length = max(0, 1 - 0) = 1
+
+        #Third iteration
+        # L = 0
+        # R = 2
+        # doesnt hit if 
+        # length = max(0, 1 - 0) = 1

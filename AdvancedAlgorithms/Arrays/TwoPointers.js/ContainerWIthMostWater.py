@@ -1,3 +1,7 @@
+#Brute Force Solution
+#Time: O(n^2)
+#Space: O(1)
+
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         res = 0 

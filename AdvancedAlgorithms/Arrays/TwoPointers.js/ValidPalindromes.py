@@ -1,4 +1,6 @@
-
+#Solution with built in functions
+#Time: O(n)
+#Space: O(1)
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:

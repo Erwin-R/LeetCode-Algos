@@ -1,3 +1,35 @@
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        # we can reduce this problem to the following subproblems:
+        # - traversing an array from left and from right using single ptr
+        # - creating a prefix and postfix array
+        # calculating the product of two numbers
+        prefix = [1] * len(nums)
+        postfix = [1] * len(nums)
+        output = [1] * len(nums)
+
+        L = 1
+        
+        # for every l in nums, prefix shows the product of elements before i
+        while L < len(nums): 
+            prefix[L] = prefix[L - 1] * nums[L - 1]
+            L += 1
+        
+        R = len(nums) - 2
+        # for every r in nums, postfix shows the porduct of elements after r
+        while R >= 0:
+            postfix[R] = postfix[R + 1] * nums[R + 1]
+            R -= 1
+
+        print(prefix)
+        print(postfix)
+
+        # for every item in nums, we find the cumulative product before and after the item
+        for i in range(len(nums)):
+            output[i] = prefix[i] * postfix[i]
+        
+        return output
+
         #nums = [5,2,3,4]
         #prefix = [1,1,1,1]
         #postfix = [1,1,1,1]

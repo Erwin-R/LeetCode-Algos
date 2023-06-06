@@ -1,3 +1,6 @@
+#Linear Time and Space Solution
+#Time: O(n)
+#Space: O(n)
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         # we can reduce this problem to the following subproblems:

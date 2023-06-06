@@ -115,3 +115,27 @@ class Solution:
         #  ouput[1] = prefix[1] * postfix[1] = 5 * 12 = 60
         #  ouput[2] = prefix[2] * postfix[2] = 10 * 4 = 40
         #  ouput[3] = prefix[3] * postfix[3] = 30 * 1 = 30
+
+
+
+#Linear Time and Constant Space Solution
+#Time: O(n)
+#Space: O(1)
+
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        res = [1] * len(nums)
+
+        prefix = 1
+
+        for i in range(len(nums)):
+            res[i] = prefix
+            prefix *= nums[i]
+
+        postfix = 1
+
+        for i in range(len(nums) -1, -1, -1):
+            res[i] *= postfix
+            postfix *= nums[i]
+
+        return res 

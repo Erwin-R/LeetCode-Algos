@@ -1,3 +1,11 @@
+#Time and Space for function that initializes object
+#Time: O(n^2)
+#Space: O(n^2)
+
+#Time and Space for function that initializes object
+#Time: O(1)
+#Space: O(1)
+
 class NumMatrix:
 
     def __init__(self, matrix: List[List[int]]):

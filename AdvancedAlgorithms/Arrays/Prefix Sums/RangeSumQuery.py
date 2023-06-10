@@ -1,3 +1,11 @@
+#Time and Space for function that initializes object
+#Time: O(n)
+#Space: O(n)
+
+#Time and Space for function that finds sum of index range
+#Time: O(1)
+#Space: O(1)
+
 class NumArray:
 
     def __init__(self, nums: List[int]):

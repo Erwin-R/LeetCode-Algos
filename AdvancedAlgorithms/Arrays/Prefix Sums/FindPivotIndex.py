@@ -1,4 +1,5 @@
-
+#Time: O(n)
+#Space: O(1)
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
         # get total sum of array

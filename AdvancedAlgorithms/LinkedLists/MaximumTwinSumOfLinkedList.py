@@ -30,7 +30,7 @@ class Solution:
 
         return res
 
-       #                          f 
+        #                          f 
         #none <- 5 <- 4 <- 2 -> 1
         #                  t                
         #              p   s

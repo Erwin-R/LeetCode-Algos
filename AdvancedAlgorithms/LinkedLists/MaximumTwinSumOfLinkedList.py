@@ -29,3 +29,8 @@ class Solution:
 
 
         return res
+
+       #                          f 
+        #none <- 5 <- 4 <- 2 -> 1
+        #                  t                
+        #              p   s

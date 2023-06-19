@@ -1,3 +1,5 @@
+#Time: O(n * m)
+#Space: O(n)
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         ROWS, COLS = len(board), len(board[0])

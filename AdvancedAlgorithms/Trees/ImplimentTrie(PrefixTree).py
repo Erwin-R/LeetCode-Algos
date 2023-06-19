@@ -1,3 +1,6 @@
+#Time: O(n * k) where n is number of words inserted into the trie and k is the average length of the strings 
+#Space: O(n)
+
 class TrieNode:
     def __init__(self): 
         self.children = {}
@@ -29,7 +32,6 @@ class Trie:
         
         return curr.word
         
-
     def startsWith(self, prefix: str) -> bool:
         curr = self.root
 

@@ -1,24 +1,41 @@
-par = {1: 2}
-
-p = par[1]
-print(p)
-
-#edges = [[1,2],[1,3],[2,3]]
-#par = [0, 1, 2, 3]
-#rank = [1, 1, 1, 1]
+class TrieNode:
+    def __init__(self): 
+        self.children = {}
+        self.word = False
 
 
-#First Iteration 
-# par = [0, 2, 2, 3]
-# rank  [1, 1, 2, 1]
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+        
 
-#Second Iteration
-# par = [0, 2, 2, 2]
-# rank =[1, 1, 3, 1]
+    def insert(self, word: str) -> None:
+        curr = self.root
 
-#Third Iteration
-# hits first if and returns false
+        for c in word:
+            if c not in curr.children:
+                curr.children[c] = TrieNode()
+            curr = curr.children[c]
 
-# edges = [[1,2],[2,3],[3,4],[1,4],[1,5]]
-# par = [0, 1, 2, 3, 4, 5]
-# rank = [1, 1, 1, 1, 1, 1]
+        curr.word = True         
+
+    def search(self, word: str) -> bool:
+        curr = self.root
+
+        for c in word:
+            if c not in curr.children: 
+                return False
+            curr = curr.children[c]
+        
+        return curr.word
+        
+
+    def startsWith(self, prefix: str) -> bool:
+        curr = self.root
+
+        for c in prefix:
+            if c not in curr.children:
+                return False
+            curr = curr.children[c]
+
+        return True

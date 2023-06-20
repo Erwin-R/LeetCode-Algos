@@ -1,3 +1,5 @@
+#Time: O(n * m)
+#Space: O(n)
 class TrieNode: 
     def __init__(self):
         self.children = {}

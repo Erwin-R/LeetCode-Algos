@@ -1,3 +1,7 @@
+#With union and find function we get time complexity called inverse ackermann which approximates to O(1)
+#Where n is the number of vertices
+#Time: O(n * (m * log(n))) -> O(n)
+#Space: O(n)
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
         par = [i for i in range(len(edges) + 1)]

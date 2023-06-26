@@ -1,3 +1,8 @@
+#Where N is the accounts and K is the number of emails per account
+#Worst case where all emails belong to same account
+#Time: O(NK * log(NK))
+#Space: O(N * K)
+#Have a hashset that stores list of emails per key
 class UnionFind: 
     def __init__(self, n):
         self.par = [i for i in range(n)]
@@ -52,6 +57,7 @@ class Solution:
         
         #sift through the hashmap with email and index (key value pair)
         for e, i in emailToAcc.items():
+            #we unionized the accounts in the last for loop so now we find the leader per email
             leader = uf.find(i)
 
             emailGroup[leader].append(e)

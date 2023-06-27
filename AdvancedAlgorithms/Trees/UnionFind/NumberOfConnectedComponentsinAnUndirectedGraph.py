@@ -1,3 +1,5 @@
+#Time: O(n)
+#Space: O(n)
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
         # adjList = defaultdict(list)

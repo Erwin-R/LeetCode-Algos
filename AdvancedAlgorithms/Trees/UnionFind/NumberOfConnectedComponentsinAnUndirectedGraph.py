@@ -1,5 +1,10 @@
-#Time: O(n)
-#Space: O(n)
+#E = # of edges and V is number of vertexes
+#Building the adjacency list will take O(E) operations, as we iterate over the list of edges once, and insert each edge into two lists.
+#During the DFS traversal, each vertex will only be visited once. In addition, when we iterate over the edge list of each vertex, we look at each edge once. 
+#Time: O(E + V) -> O(n)
+
+#Building the adjacency list will take O(E) space. To keep track of visited vertices, an array of size O(V) is required. Also, the run-time stack for DFS will use O(V) space.
+#Space: O(E + V) -> O(n)
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
         # adjList = defaultdict(list)

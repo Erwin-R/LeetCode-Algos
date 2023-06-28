@@ -50,7 +50,8 @@ class Solution:
     
     
 #Union Find Solution
-
+#Iterating over the edges is O(E) and union function is O(a(n)) which is the inverse ackerman function which is O(1)
+#Time: O(E * a(n)) -> O(n)
 #Storing size and parents of each vertex takes O(n) space
 #Space: O(n) 
 class UnionFind: 

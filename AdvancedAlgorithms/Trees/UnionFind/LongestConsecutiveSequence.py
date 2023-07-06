@@ -13,3 +13,8 @@ class Solution:
                     length += 1
                 longest = max(length, longest)
         return longest
+    
+
+#Union Find solution
+#Time: O(n)
+#Space: O(n)

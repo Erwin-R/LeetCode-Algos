@@ -1,3 +1,7 @@
+#Build Function: Time: O(n), Space:O(n)
+#updateTree Function: Time: O(log(n)), Space: O(1)
+#rangeSum Function: Time: O(log(n)), Space: O(1)
+
 #Segment Tree Node
 class SegmentTree: 
     def __init__(self, total, L, R):

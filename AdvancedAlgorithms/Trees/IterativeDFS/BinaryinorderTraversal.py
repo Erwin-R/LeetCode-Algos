@@ -1,3 +1,5 @@
+#Time: O(n)
+#Space: O(n)
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         res = []

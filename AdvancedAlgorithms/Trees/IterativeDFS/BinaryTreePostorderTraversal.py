@@ -4,6 +4,10 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+#Time: O(N)
+#Space:O(n)
+
 class Solution:
     def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         stack, visit = [root], [False]

@@ -1,3 +1,11 @@
+#Time: 
+#Retreival O(1)
+#Insertion and deletion: O(log(n))
+#Calculating Median: O(1)
+
+#Space: O(n)
+
+
 class MedianFinder:
 
     def __init__(self):

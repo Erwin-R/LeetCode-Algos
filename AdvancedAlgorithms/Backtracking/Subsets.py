@@ -7,9 +7,11 @@ class Solution:
                 subsets.append(curSet.copy())
                 return
 
+            #decision to include nums[i]
             curSet.append(nums[i])
             dfs(i + 1)
 
+            #decision not to include nums[i]
             curSet.pop()
             dfs(i + 1)
 

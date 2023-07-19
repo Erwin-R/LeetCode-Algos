@@ -1,3 +1,5 @@
+#Time: O(n * 2^t) where t is the target value
+#Space: O(n)
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res, curComb = [], []

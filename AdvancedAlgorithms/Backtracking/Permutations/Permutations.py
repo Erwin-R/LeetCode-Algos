@@ -1,3 +1,7 @@
+#n amount of permutations and n length for each permutation * n time complexity to insert
+#Time: O(n! * n^2)
+#Space: O(n)
+
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         return self.helper(0, nums)

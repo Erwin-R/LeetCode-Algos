@@ -1,3 +1,5 @@
+#Time: O(n * 2^n)
+#Space: O(n)
 class Solution:
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
         res = []

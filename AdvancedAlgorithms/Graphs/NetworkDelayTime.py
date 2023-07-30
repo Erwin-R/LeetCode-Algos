@@ -1,4 +1,7 @@
-#time
+#Have to iterate through each edge and in the worst case have to visit each node. Getting min from heap is log(n)
+#Time: E * log(V^2) -> E * log(V)
+#Where N is the space for adj list and E is for the minHeap
+#Space: O(N + E)
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
 

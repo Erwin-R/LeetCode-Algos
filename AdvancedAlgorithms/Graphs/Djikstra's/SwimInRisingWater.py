@@ -1,3 +1,5 @@
+#Time: O(n^2 * log(n))
+#Space: O(n^2) / O(n * m)
 class Solution:
     def swimInWater(self, grid: List[List[int]]) -> int:
         N = len(grid)

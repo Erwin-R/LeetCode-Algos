@@ -1,3 +1,9 @@
+#Since the algorithm is so similar to Dijkstra's algorithm, the time complexity will be the same - O(E log(V))
+# Where E is the number of edges and V is the number of vertices
+#Time: O(E log(V))
+
+#The Space complexity is O(E) since our hashset grows linearly to the number of edges our graph has
+#Space: O(E)
 class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
         #Setup adj list

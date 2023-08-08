@@ -1,3 +1,10 @@
+
+# Where E is the number of edges and V is the number of vertices
+#Time: O(E log(V))
+
+#The Space complexity is O(E) since our hashset grows linearly to the number of edges our graph has
+#Space: O(E)
+
 class UnionFind: 
     def __init__(self, n):
         self.par = [i for i in range(n)]

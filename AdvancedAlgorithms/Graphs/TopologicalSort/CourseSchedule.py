@@ -1,3 +1,7 @@
+#Where n is the number of courses/nodes and p is the prerequisites
+#Time: O(n + p) 
+#Space: O(n)
+
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         preMap = {i: [] for i in range(numCourses)}

@@ -6,18 +6,24 @@ class Solution:
         for crs, pre in prerequisites:
             preMap[crs].append(pre)
 
-        visit = set()
+        visit, cycle = set(), set()
 
         def dfs(crs): 
-            if crs in visit: return False
-            if preMap[crs] == []:
+            if crs in cycle: return False
+            if crs in visit:
                 return True
             
-            visit.add(crs)
+            cycle.add(crs)
 
             for preReq in preMap[crs]:
                 if not dfs(preReq): return False
             
+            cycle.remove(crs)
+            visit.add(crs)
             res.append(crs)
-            visit.remove(crs)
-            preMap[crs] = []
+            return True
+        
+        for c in range(numCourses):
+            if not dfs(c): return []
+        
+        return res

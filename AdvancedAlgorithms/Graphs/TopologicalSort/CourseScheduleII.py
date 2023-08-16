@@ -1,3 +1,5 @@
+#Time: O(E + V)
+#Space: O(n)
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         res = []

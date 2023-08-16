@@ -15,6 +15,10 @@ class Solution:
             if crs in visit:
                 return True
             
+            #can't do this line below because it will return too early and wont add the correct order of courses taken
+            # if preMap[crs] == []: return True
+            # preMap[crs] = []
+
             cycle.add(crs)
 
             for preReq in preMap[crs]:

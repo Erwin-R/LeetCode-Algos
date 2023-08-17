@@ -1,3 +1,6 @@
+#where in worst case have to travel to every node which is N^2 for N numbers of courses and go through every query(Q)
+#Time: O(N^3 * Q)
+#Space: O(n)
 class Solution:
     def checkIfPrerequisite(self, numCourses: int, prerequisites: List[List[int]], queries: List[List[int]]) -> List[bool]:
         #makes each key a list

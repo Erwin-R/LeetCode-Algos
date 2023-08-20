@@ -1,3 +1,6 @@
+#Time: 
+#Space: 
+
 class Solution:
     def alienOrder(self, words: List[str]) -> str:
         adj = {c: set() for w in words for c in w}

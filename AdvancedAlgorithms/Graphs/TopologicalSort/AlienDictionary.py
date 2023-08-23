@@ -1,5 +1,5 @@
-#Time: 
-#Space: 
+#Time: O(E + V )
+#Space: O(N)
 
 class Solution:
     def alienOrder(self, words: List[str]) -> str:

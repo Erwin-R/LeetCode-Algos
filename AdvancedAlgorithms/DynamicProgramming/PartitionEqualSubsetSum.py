@@ -1,4 +1,6 @@
 #Brute Force Approach
+#Time: O(2^N)
+#Space: O(N)
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
         def dfs(nums, n, subsetSum):

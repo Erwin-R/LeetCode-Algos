@@ -29,6 +29,10 @@ class Solution:
         return dfs(nums, n - 1, subsetSum)
     
 #DP bottom-up approach
+#where N is the elements in nums and sumNums is the sum after subtracting the elements
+#Time: O(N * sumNums)
+#since set length is based on the target size 
+#Space: O(sum(nums))
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
         if sum(nums) % 2:

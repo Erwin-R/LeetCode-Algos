@@ -8,6 +8,7 @@ class Solution:
             if n == 0 or subsetSum < 0:
                 return False 
             
+            #checking to see if paths of subsetSum can be made
             result = (dfs(nums, n - 1, subsetSum - nums[n - 1])
                     or dfs(nums, n - 1, subsetSum))
             

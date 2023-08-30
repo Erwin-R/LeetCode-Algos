@@ -27,3 +27,27 @@ class Solution:
         subsetSum = arraySum // 2 
         n = len(nums)
         return dfs(nums, n - 1, subsetSum)
+    
+#DP bottom-up approach
+class Solution:
+    def canPartition(self, nums: List[int]) -> bool:
+        if sum(nums) % 2:
+            return False 
+
+        dp = set()
+        dp.add(0)
+        targetSum = sum(nums) // 2
+
+        for i in range(len(nums) -1, -1, -1):
+            nextDp = set()
+            #cant change size of set during iteration(this is a thing?)
+            # for t in dp: 
+            #     dp.add(t + num)
+            #     dp.add(t)
+
+            for t in dp: 
+                nextDp.add(t + nums[i])
+                nextDp.add(t)
+            dp = nextDp
+            print(dp)
+        return True if targetSum in dp else False

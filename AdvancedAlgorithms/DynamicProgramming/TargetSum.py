@@ -1,4 +1,6 @@
 #Brute Force solution
+#Time: O(2^n)
+#Space:O(n)
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
         def dfs(i, curSum):

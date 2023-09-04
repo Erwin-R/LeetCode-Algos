@@ -30,7 +30,10 @@ class Solution:
 # sub-tree.
 
 
-
+#Dynamic Programming Solution  
+#where n is length of array and m is sum of nums array
+#Time: O(n * m)
+#Space: O(n * m)
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
         dp = {} #(index, total) -> # of ways

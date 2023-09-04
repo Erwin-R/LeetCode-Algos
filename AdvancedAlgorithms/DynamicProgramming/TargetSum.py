@@ -28,3 +28,21 @@ class Solution:
 # IMP: we compute the node (2,0) twice -- if we traverse the left first
 # memoize this result we won't have to traverse this branch in the right
 # sub-tree.
+
+
+
+class Solution:
+    def findTargetSumWays(self, nums: List[int], target: int) -> int:
+        dp = {} #(index, total) -> # of ways
+        def dfs(i, curSum):
+            if i >= len(nums): 
+                return 1 if curSum == target else 0
+
+            if (i, curSum) in dp: 
+                return dp[(i, curSum)]
+
+            dp[(i, curSum)] = dfs(i + 1, curSum + nums[i]) + dfs(i + 1, curSum - nums[i])
+
+            return dp[(i, curSum)]
+
+        return dfs(0, 0)

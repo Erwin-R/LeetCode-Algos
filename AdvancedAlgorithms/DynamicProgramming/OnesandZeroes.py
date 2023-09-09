@@ -1,3 +1,4 @@
+#Memoization Solution
 class Solution:
     def findMaxForm(self, strs: List[str], m: int, n: int) -> int:
         dp = {}
@@ -20,3 +21,5 @@ class Solution:
             return dp[(i, m, n)]
 
         return dfs(0, m, n)
+    
+#DP solution 

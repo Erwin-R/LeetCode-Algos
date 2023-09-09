@@ -23,3 +23,10 @@ class Solution:
         return dfs(0, m, n)
     
 #DP solution 
+class Solution:
+    def findMaxForm(self, strs: List[str], M: int, N: int) -> int:
+        #when we go out of bounds the dict will return a default value which is 0 in this case since ""dict of ints""
+        dp = defaultdict(int)
+
+        for s in strs: 
+            mCnt, nCnt = s.count("0"), s.count("1")

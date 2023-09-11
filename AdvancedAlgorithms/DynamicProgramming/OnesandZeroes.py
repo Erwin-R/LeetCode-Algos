@@ -30,3 +30,9 @@ class Solution:
 
         for s in strs: 
             mCnt, nCnt = s.count("0"), s.count("1")
+            for m in range(M, mCnt - 1, -1):
+                for n in range(N, nCnt - 1, -1):
+                    dp[(m,n)] = max(
+                        dp[(m,n)], 
+                        1 + dp[m - mCnt, n - nCnt])
+        return dp[(M, N)]

@@ -1,7 +1,7 @@
 def dp(profit, weight, capacity):
     N, M = len(profit), capacity
     dp = [[0] * (M + 1) for _ in range(N)]
-
+    print("before loop:", dp)
     # Fill the first column and row to reduce edge cases
     for i in range(N):
         dp[i][0] = 0
@@ -16,4 +16,8 @@ def dp(profit, weight, capacity):
             if c - weight[i] >= 0:
                 include = profit[i] + dp[i][c - weight[i]]
             dp[i][c] = max(include, skip)
+    print("after loop:", dp)
+    print("=====================================")
     return dp[N-1][M]
+
+print(dp([4,4,7,1], [5,2,3,1], 8))

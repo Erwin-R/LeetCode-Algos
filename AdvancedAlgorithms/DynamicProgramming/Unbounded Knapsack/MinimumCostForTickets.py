@@ -1,5 +1,6 @@
-
 #Memoization Solution
+#Time: O(sum(day passes) * n) --> O(n)
+#Space: O(n)
 class Solution:
     def mincostTickets(self, days: List[int], costs: List[int]) -> int:
         dp = {}
@@ -23,6 +24,8 @@ class Solution:
         return dfs(0)
 
 #Dynamic Programming Solution
+#Time: O(n * m)
+#Time: O(n * m)
 class Solution:
     def mincostTickets(self, days: List[int], costs: List[int]) -> int:
         dp = {}

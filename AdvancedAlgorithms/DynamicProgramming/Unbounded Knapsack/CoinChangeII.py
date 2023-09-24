@@ -20,6 +20,8 @@ class Solution:
         return dfs(0,0)
     
 #Naive DP Memory Solution
+#Time: O(n * m)
+#Space: O(n * m)
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
         dp = [[0] * (len(coins) + 1) for i in range(amount + 1)] 

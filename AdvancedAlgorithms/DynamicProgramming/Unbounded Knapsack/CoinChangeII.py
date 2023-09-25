@@ -1,4 +1,6 @@
 #Memoization Solution
+#Time: O(n * m)
+#Space: O(n * m)
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
         cache = {}

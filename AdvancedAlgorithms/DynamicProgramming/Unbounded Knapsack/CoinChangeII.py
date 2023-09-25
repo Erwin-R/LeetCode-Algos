@@ -37,6 +37,8 @@ class Solution:
         return dp[amount][0]
 
 #Optimized DP memory solution
+#Time: O(n * m)
+#Space: O(n)
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
         dp = [0] * (amount + 1)

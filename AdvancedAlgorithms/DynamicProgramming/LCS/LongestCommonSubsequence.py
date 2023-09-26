@@ -14,7 +14,9 @@ class Solution:
         
         return dfs(0,0)
 
-
+#Memoization Solution
+#Time: O(n * m)
+#Space: O(n + m)
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         N, M = len(text1), len(text2)

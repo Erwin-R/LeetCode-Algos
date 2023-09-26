@@ -1,5 +1,5 @@
 #Time: O(2^(n +  m))
-#Space: O(n + m)
+#Space: O(n + m) *length of tree
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         def dfs(i1, i2):

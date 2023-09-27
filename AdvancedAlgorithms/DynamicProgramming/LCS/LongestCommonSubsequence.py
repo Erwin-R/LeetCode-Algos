@@ -55,6 +55,9 @@ class Solution:
         return dp[N][M]
     
 
+#Dynamic Programming
+#Time: O(n * m)
+#Space: O(m)
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         N, M = len(text1), len(text2)

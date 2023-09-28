@@ -1,3 +1,5 @@
+#Time: O(n * m)
+#Space: O(n * m)
 class Solution:
     def numDistinct(self, s: str, t: str) -> int:
         cache = {}

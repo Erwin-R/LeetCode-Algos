@@ -1,3 +1,5 @@
+#Time: O(n * m)
+#Space: O(n * m)
 class Solution:
     def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
         dp = {}

@@ -1,3 +1,4 @@
+#Memoization Solution
 #Time: O(n * m)
 #Space: O(n * m)
 class Solution:
@@ -23,7 +24,10 @@ class Solution:
             dp[(i, j)] = False 
             return False
         return dfs(0,0)
-    
+
+#Dynamic Programming Solution
+#Time: O(n * m)
+#Space: O(n * m)
 class Solution:
     def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
         if len(s1) + len(s2) != len(s3):

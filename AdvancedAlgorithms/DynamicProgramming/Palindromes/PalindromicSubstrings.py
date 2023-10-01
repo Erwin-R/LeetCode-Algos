@@ -1,3 +1,5 @@
+#Time: O(n^2)
+#Space: O(1)
 class Solution:
     def countSubstrings(self, s: str) -> int:
         res = 0 
